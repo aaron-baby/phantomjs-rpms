@@ -1,6 +1,10 @@
-This repository holds files and scripts to build a PhantomJS RPM
+This repository holds source scripts and tools for building a PhantomJS RPM
 package. This package will also include xvfb-run, so you are good to
 run your headless tests.
+
+This cleaned repository excludes the several hundred MB of source tarballs and build 
+dependency RPMs each of which can be retrieved using the fetch-phantomjs script and 
+the Yum package manager respectively.
 
 # Ingredients
 - Qt 4.7: from http://dl.atrpms.net/el5-x86_64/atrpms/testing/
@@ -14,17 +18,17 @@ run your headless tests.
 - Xorg-X11-Server: MIT
 
 # How to prepare build environment
-- build Qt 4.7 RPMS from included src.rpm OR use ./fetch-qt-rpms to download them
 - yum/rpm install qt47-devel qt47-webkit qt47-webkit-devel sqlite-devel
 
 # How to build
-- source code is included for PhantomJS 1.1, 1.2 and 1.3
-- for PhantomJS 1.4.x and 1.5 use `fetch-phantomjs $version`
-- `./rpm SPECS/phantomjs-$version.spec`
+- Retrieve the PhantomJS source tarball for your chosen version
+  using the included tool script: `fetch-phantomjs $version`
+- `./rpm SPECS/phantomjs-$version.spec` taking note to update version in the top of the the specfile as needed
 
 # Build branches
 - use `fetch-phantomjs` script to fetch sources from branches
 - modify .spec to suit your needs
 
 Have fun!
-Jens Braeuer
+Jens Braeuer (Original Author)
+Colin Hill
