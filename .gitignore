@@ -1,0 +1,10 @@
+BUILDROOT
+BUILD
+SRPMS
+RPMS
+*~
+\#*
+.\#*
+SOURCES/.zip
+SOURCES/*.gz
+SOURCES/*.bz2
